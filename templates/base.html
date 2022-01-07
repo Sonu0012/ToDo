@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moon+Dance&family=Raleway:ital@1&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+ <title>
+    {% block title %}
+        
+    {% endblock title %}
+        | To-Do List</title>
+
+
+    <style>
+      body{
+        background-color: rgb(255,182,193);
+        padding-top: 50px;
+      }
+
+      .container{
+        background-color: white;
+        font-family: 'Roboto Slab', serif;
+        max-width: 550px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+        margin: auto;
+        
+      }
+
+      h1,h2,h3,h4,h5,h6{
+        font-family: 'Raleway', sans-serif;
+        padding: 10px;
+      }
+
+      a,p{
+        color: #888888;
+      }
+
+.header{
+  padding: 20px;
+  padding-bottom: 30px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  background-color: #feae96;
+background-image: linear-gradient(315deg, #feae96 0%, #fe0944 74%);
+}    
+
+.header a{
+  color: white;
+  text-decoration: none;
+}
+
+
+
+.wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  border-top: 2px solid rgb(194, 192, 192);
+}
+
+.wrap a{
+  text-decoration: none;
+}
+
+.task{
+  display: flex;
+}
+.dot {
+  height: 20px;
+  width: 20px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.idot {
+  height: 20px;
+  width: 20px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+input[type=text],
+input[type=password],
+textarea{
+  border: 2px solid #BA0021;
+  border-radius: 5px;
+  padding: 10px;
+  width: 90%;
+}
+
+label{
+  padding: 10px !important;
+  display: block;
+
+}
+
+.button{
+  border: 2px solid #BA0021;
+  background-color: #ffe1e0;
+  color: #BA0021;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card{
+  padding: 10px;
+  padding-left: 24px;
+}
+    </style>
+        
+
+
+  </head>
+
+  
+  <body>
+
+    <div class="container p-0">
+    
+ 
+ {% block content %}
+
+     
+ {% endblock content %}
+
+</div>
+
+     
+       
+        
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Tasks
+  
+{% endblock title %}
+
+
+{% block content %}
+   
+<div class="header w-100 "">
+  <div>
+    <h1>Hello {{ request.user|title }}</h1>
+    <h3 style="margin:0;">You have <i>{{count}}</i> incomplete Tasks</h3>
+  </div>
+{% if request.user.is_authenticated %}
+   
+    <a href=" {% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    </div>
+   
+
+      
+   
+     <div class="search-wrap" style="display: flex; justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+      <form action="" method="get" style="margin-top: 20px; margin-bottom: 20px; display: flex;">
+        <input type="text" name="search_area" value="{{search_input}}" >
+        <input class='button' type="submit" value="Search">
+    </form>
+    <a href="{% url 'create' %}" style="font-size: 40px; color: red; text-decoration: none;">&#x2b</a>
+     </div>
+  
+
+    <div class="taskblock">
+      {% for tasks in task %}
+      <div class="wrap">
+         {% if tasks.complete %}
+        <div class="task">
+          <div class="tc">
+            <span class="idot"></span>
+            <a href="{% url 'update' tasks.id %}"><i><s>{{tasks.title}}</s></i></a>
+          </div>
+        </div>
+        {% else %}
+        <div class="task">
+         <div class="ti">
+          <span class="dot"></span>
+            <a href="{% url 'update' tasks.id %}"><i>{{tasks.title}}</i></a>
+         </div>
+        </div>
+          
+        
+          
+        {% endif %}
+       <a href="{% url 'delete' tasks.id %}"><button type="button" class="btn-close" aria-label="Close"></button></a>
+          
+      </div>
+      {% endfor %}
+    </div>
+    
+
+
+
+
+      {% endblock content %}   
